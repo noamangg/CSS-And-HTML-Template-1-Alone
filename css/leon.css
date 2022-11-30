@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  /* Variables */
+  --sectionBGColor: #f6f6f6;
+  --sectionHeaderColor: #ebeced;
+  --mainColor: #10cab7;
+  --paragraphColor: #777777;
+  --main-duration: .5s;
+  --headingColor: #ebeced;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+i {
+  
+  color: var(--mainColor);
+}
+
+.container {
+  margin: 0 10%;
+  padding: 20px 0;
+}
+
+/* Header Style */
+header {
+  background-color: white;
+}
+
+header .container {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header .container img {
+  height: 30px;
+}
+
+header .container .parent {
+  width: 30px;
+  height: 20px;
+  align-content: space-between;
+justify-content: flex-end;
+} 
+
+header .container .parent  span {
+  width: 100%;
+  height: 10%;
+  background-color: black;
+}
+
+header .container .parent span:nth-child(2) {
+  width: 70%;
+  transition-duration: var(--main-duration);
+}
+
+header .container .links:hover span:nth-child(2) {
+  width: 100%;
+}
+
+header .container .links:hover ul {
+  display: block;
+}
+
+header .container ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% - 20px);
+  min-width: 225px;
+  background-color: var(--sectionBGColor);
+}
+header .container ul::before:hover {
+  display: block;
+}
+header .container ul::before {
+  content: "";
+  border: 15px solid;
+  border-color: transparent transparent var(--sectionBGColor) transparent;
+
+  position: absolute;
+  right: 0;
+  top: -25px;
+}
+
+header .container ul li{
+  padding: 15px;
+  background-color: var(--sectionBGColor);
+}
+
+header .container ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+header .container ul li a:hover {
+  padding-left:10px;
+}
+
+header .container ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: var(--main-duration);
+}
+/* Header Style End */
+
+/* Loading Style */
+.loading {
+  background: url(../images/landing.jpg);
+  background-size: cover;
+  height: calc(100vh - 71px);
+}
+
+.loading .container {
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.loading .container .intro-text {
+  justify-content: center;
+  width: 320px;
+  max-width: 100%;
+}
+.loading .container .intro-text h1 {
+  font-size: 50px;
+  color: var(--mainColor);
+  text-align: center;
+  margin: 0
+}
+
+.loading .container .intro-text p {
+  text-align: center;
+  line-height: 1.8;
+  font-size: 20px;
+}
+/* Loading Style End */
+
+/* Info Style */
+.info {
+  background-color: var(--sectionBGColor);
+}
+.info .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info .container .item {
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+.info .container .item i {
+  font-size: 60px;
+}
+.info .container .item h2 {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.info .container .item p {
+  line-height: 1.8;
+  color: var(--paragraphColor);
+}
+/* Info Style End */
+
+/* Services Style */
+
+.container > h2 {
+  text-align: center;
+  font-size: 80px;
+  color: var(--headingColor);
+  position: relative;
+}
+.container > h2::after {
+  content: "Don't be busy, be productive";
+  color: var(--paragraphColor);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services .container .skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.container .skills .skill {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 30px;
+}
+
+.container .skills .skill .text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.container .skills .skill .text h3 {
+  margin: 0;
+}
+
+.container .skills .skill .text p {
+  line-height: 1.8;
+  color: var(--paragraphColor);
+}
+/* Services Style End */
+
+
+/* Portfolio Style */
+.portfolio {
+  background-color: var(--sectionBGColor);
+}
+
+.container .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.container .projects .project {
+  background-color: white;
+}
+
+.container .projects .project .text {
+  padding: 0px 20px;
+}
+
+.container .projects .project img {
+width: 100%;
+}
+
+.container .projects .project .text p {
+  line-height: 1.8;
+  color: var(--paragraphColor);
+}
+/* Portfolio Style End */
+
+/* About Style */
+.container .about-us {
+  justify-content: center;
+  gap: 40px;
+}
+
+.container .about-us img {
+  width: 50%;
+}
+
+.container .about-us p {
+  font-weight: bold;
+  line-height: 1.8;
+  text-align: center;
+}
+
+hr {
+  width: 50%;
+  border-color: #10cab7;
+}
+
+.container .about-us p:last-child {
+  font-weight: normal;
+  color: var(--paragraphColor);
+}
+/* About Style End */
+
+
+/* Contact Style */
+.contact {
+  background-color: var(--sectionBGColor);
+}
+
+.contact .info {
+  text-align: center;
+}
+
+.contact .info h3 {
+  width: 100%;
+  color: var(--headingColor);
+  font-size: 30px;
+}
+
+.contact .info a {
+  width: 100%;
+  text-decoration: none;
+  color: var(--mainColor);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.contact .info .social {
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Contact Style End */
+
+
+/* Footer Style */
+
+footer {
+  justify-content: center;
+  padding: 20px 0;
+}
+
+footer span {
+  color: var(--mainColor);
+}
+
+footer p {
+  font-weight: bold;
+  color: var(--sectionBGColor);
+}
+/* Footer Style End */
